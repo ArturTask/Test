@@ -3,6 +3,16 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Test_war</output-path>
     <root id="archive" name="Test_war.war">
       <element id="artifact" artifact-name="Test:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/Library/apache-tomcat-9.0.38/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" />
+          <element id="file-copy" path="$USER_HOME$/Library/apache-tomcat-9.0.38/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" />
+          <element id="file-copy" path="$USER_HOME$/Library/apache-tomcat-9.0.38/lib/servlet-api.jar" />
+        </element>
+        <element id="directory" name="src">
+          <element id="dir-copy" path="$PROJECT_DIR$/src" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

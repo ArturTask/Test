@@ -37,12 +37,11 @@
                     <td class = "col1">X</td>
                     <td class = "col2">Y</td>
                     <td class = "col3">R</td>
-                    <td class = "col4">Ответ</td>
-                    <td class = "col5">Время</td>
-                    <td class = "col6">Время работы скрипта (в мс)</td>
+                    <td class = "col4">Результат</td>
                 </tr>
-
+                <jsp:include page="incl/table.jsp" />
             </table>
+
         </div>
     </div>
 </div>

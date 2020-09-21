@@ -1,4 +1,4 @@
-
+<%@ page import="java.util.UUID" %>
 <%@ page contentType="text/html;charset=utf-8" %>
 
 <html>
@@ -61,7 +61,7 @@
 			<p>
                <input type="submit" value="Отправить">
             </p>
-			
+            <input type="hidden" name="unique" value="<%= UUID.randomUUID().toString()%>">
             <div id="error"></div>
 
 		</form>
@@ -73,12 +73,11 @@
                 <td class = "col1">X</td>
                 <td class = "col2">Y</td>
                 <td class = "col3">R</td>
-                <td class = "col4">Ответ</td>
-                <td class = "col5">Время</td>
-                <td class = "col6">Время работы скрипта (в мс)</td>
+                <td class = "col4">Результат</td>
               </tr>
-			  
-		     </table>          
+                <jsp:include page="incl/table.jsp" />
+		     </table>
+
 	    </div>		
 	</div>
   </div>

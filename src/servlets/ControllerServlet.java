@@ -24,7 +24,7 @@ public class ControllerServlet extends HttpServlet {
            }
         }
         catch(Exception e){
-        //    e.printStackTrace();
+            e.printStackTrace();
             createErrorPage(resp);
         }
     }

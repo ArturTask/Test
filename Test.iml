@@ -19,10 +19,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://C:/Program Files/Apache Software Foundation/Tomcat 7.0_Tomcat9/lib/servlet-api.jar!/" />
+          <root url="jar://$USER_HOME$/Library/apache-tomcat-9.0.38/lib/servlet-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -31,7 +32,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://C:/Program Files/Apache Software Foundation/Tomcat 7.0_Tomcat9/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar!/" />
+          <root url="jar://$USER_HOME$/Library/apache-tomcat-9.0.38/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -40,7 +41,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://C:/Program Files/Apache Software Foundation/Tomcat 7.0_Tomcat9/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar!/" />
+          <root url="jar://$USER_HOME$/Library/apache-tomcat-9.0.38/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

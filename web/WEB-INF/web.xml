@@ -19,12 +19,4 @@
         <servlet-name>AreaCheckServlet</servlet-name>
         <url-pattern>/areaCheckServlet</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>SessionServlet</servlet-name>
-        <servlet-class>servlets.SessionServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SessionServlet</servlet-name>
-        <url-pattern>/session</url-pattern>
-    </servlet-mapping>
 </web-app>

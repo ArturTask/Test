@@ -1,5 +1,5 @@
-var MAX_X = 5;
-var MIN_X = -3;
+const MAX_X = 5;
+const MIN_X = -3;
 
 document.getElementById("graphic").onclick = function(event) {
 	      const rect = document.getElementById("graphic").getBoundingClientRect();
@@ -14,18 +14,21 @@ document.getElementById("graphic").onclick = function(event) {
             const centerY = 125;
 			
 			const cordX = findNearest((x - centerX) * r / r_pixels);
-			var cordY = Math.min(Math.max(-(y - centerY) * r / r_pixels, -2.99999), 4.99999);
+			let cordY = Math.min(Math.max(-(y - centerY) * r / r_pixels, -2.99999), 4.99999);
 			cordY = cordY.toFixed(5);
 			
 			const resX = cordX * r_pixels / r + centerX;
 			const resY = centerY - cordY * r_pixels / r;
-			alert(cordX);
 			changePoint(resX,resY);
 		   }
 		 else{
 		    $('#error').text("Укажите значение R");
 		 }
-			 
+
+		let form = document.createElement('form');
+		form.action = 'controllerServlet';
+		form.method = 'GET';
+		form.submit();
 };
 
 function changePoint(x,y) {

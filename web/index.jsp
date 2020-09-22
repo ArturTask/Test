@@ -61,7 +61,7 @@
                <input type="submit" value="Отправить">
             </p>
             <div id="error"></div>
-
+            <input type="hidden" name="isFromGraphic" value="0">
 		</form>
 		
 		

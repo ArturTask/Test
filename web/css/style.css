@@ -60,7 +60,7 @@ input[name = "x"], input[name = "r"]{
 	width: 25px;
 	height: 20px;
 	background: #78e3dd;
-	color: #f4365e;
+	color: black;
 }
 
 .greenButton {
@@ -95,7 +95,7 @@ input[type = "button"]{
 
 #answer {
 	text-align: center;
-    background: #19cf93;
+    background: rgba(53,255,47,0.5);
     width: 60%;
     margin: 10px 0 0 20%; 
 	border-collapse: collapse;
@@ -129,7 +129,21 @@ td, tr{
 .col4 {
 	width: 25%;
 }
+#currentAnswer{
+	width: 15%;
+	margin: auto;
+	background: rgba(68,238, 255, 0.5);
+	border-collapse: collapse;
+	text-align: center;
 
+}
+
+.currentTable{
+	font-weight: bold;
+	font-size: 15px;
+	margin: 10px 0;
+	color: #ff55f6;
+}
 
 
 

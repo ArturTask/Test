@@ -29,8 +29,14 @@ public class AreaCheckServlet extends HttpServlet {
         {
             history = (ArrayList<Dot>)session.getAttribute("history");
         }
-        history.add(new Dot(x,y,r,"Correct",""));
-//        (String)req.getAttribute("unique")
+        String result = "Correct";
+        Dot newdot = new Dot(x,y,r,result);
+        history.add(newdot); // изменить результат
+
+        session.setAttribute("currentDot", newdot);
+//        session.setAttribute("currentY", y);
+//        session.setAttribute("currentR", r);
+//        session.setAttribute("currentResult", result);
         session.setAttribute("history", history);
         RequestDispatcher dispatcher = req.getRequestDispatcher("result.jsp");
         dispatcher.forward(req, resp);

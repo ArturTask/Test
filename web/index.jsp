@@ -1,4 +1,3 @@
-<%@ page import="java.util.UUID" %>
 <%@ page contentType="text/html;charset=utf-8" %>
 
 <html>
@@ -15,7 +14,7 @@
 	<header>
         <div class = "header1"><img src = 'https://cdn.betterttv.net/emote/55a63293b13ce179110b0193/2x'>Лабораторная работа №2 по Веб-программированию<img src='https://cdn.betterttv.net/emote/5bc2143ea5351f40921080ee/2x' ></div>
         <div class = "header2">Вариант №2225</div>
-        <div class = "header3">Студентка: Краюхина Марина Юрьевна</div>
+        <div class = "header3">Студенты: Краюхина Марина, Таскаев Артур</div>
         <div class = "header4">Группа: <span class="P3111"> P3211</span></div>
 	</header>
 
@@ -61,7 +60,6 @@
 			<p>
                <input type="submit" value="Отправить">
             </p>
-            <input type="hidden" name="unique" value="<%= UUID.randomUUID().toString()%>">
             <div id="error"></div>
 
 		</form>

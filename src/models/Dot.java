@@ -7,7 +7,7 @@ public class Dot {
     private String r;
     private String y;
     private String result;
-    private String unique;
+//    private String unique;
 
     public Dot(String x, String y, String r) {
         this.x = x;
@@ -20,10 +20,10 @@ public class Dot {
         this.result = result;
     }
 
-    public Dot(String x, String y, String r, String result, String unique) {
-        this(x, y, r, result);
-        this.unique = unique;
-    }
+//    public Dot(String x, String y, String r, String result, String unique) {
+//        this(x, y, r, result);
+//        this.unique = unique;
+//    }
 
     @Override
     public boolean equals(Object otherObject) {
@@ -34,14 +34,14 @@ public class Dot {
         return Objects.equals(x, other.getX())
                 && Objects.equals(y, other.getY())
                 && Objects.equals(r, other.getR())
-                && Objects.equals(result, other.getResult())
-                && Objects.equals(unique, other.getUnique());
+                && Objects.equals(result, other.getResult());
+//                && Objects.equals(unique, other.getUnique());
     }
 
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, r, result, unique);
+        return Objects.hash(x, y, r, result);
     }
 
     public String getX() {
@@ -76,13 +76,13 @@ public class Dot {
         this.result = result;
     }
 
-    public String getUnique() {
-        return unique;
-    }
+//    public String getUnique() {
+//        return unique;
+//    }
 
-    public void setUnique(String unique) {
-        this.unique = unique;
-    }
+//    public void setUnique(String unique) {
+//        this.unique = unique;
+//    }
 
 
 }

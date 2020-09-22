@@ -17,20 +17,28 @@ public class AreaCheckServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         HttpSession session = req.getSession();
 
-
-
-
-        String x = req.getParameter("x");
-        String y = req.getParameter("y");
-        String r = req.getParameter("r");
-
-        String result = checkResult(Integer.parseInt(x), Double.parseDouble(y), Integer.parseInt(r));
-
-        int numX =  Integer.parseInt(req.getParameter("pointX"));
-        double numY =  Double.parseDouble(req.getParameter("pointY"));
-        int numR =  Integer.parseInt(req.getParameter("pointR"));
-//здесь закончил
+        //variables:
         ArrayList<Dot> history;
+        String x = null;
+        String y= null;
+        String r= null;
+        String result= null;
+
+        //NOT GRAPHIC
+        if(req.getParameter("isFromGraphic").equals("0")) {
+            x = req.getParameter("x");
+            y = req.getParameter("y");
+            r = req.getParameter("r");
+
+            result = checkResult(Integer.parseInt(x), Double.parseDouble(y), Integer.parseInt(r));
+        }
+        else //GRAPHIC
+        {
+            x = req.getParameter("pointX");
+            y = req.getParameter("y");
+            r = req.getParameter("r");
+            result = checkResult(Integer.parseInt(x), Double.parseDouble(y), Integer.parseInt(r));
+        }
 
         if(session.getAttribute("history")==null)
         {
@@ -40,10 +48,9 @@ public class AreaCheckServlet extends HttpServlet {
         {
             history = (ArrayList<Dot>)session.getAttribute("history");
         }
-//        String result = "Correct"; // изменить результат
-//        Dot newdot = new Dot(x,y,r,result); // изменить результат
+        Dot newdot = new Dot(x,y,r,result);
 
-        Dot newdot = new Dot( ""+numX,""+numY,""+numR,result);
+//        Dot newdot = new Dot( ""+numX,""+numY,""+numR,result);
         history.add(newdot);
 
         session.setAttribute("currentDot", newdot);

@@ -12,16 +12,21 @@ public class ControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
 
-            double x = Double.parseDouble(req.getParameter("x"));
-            double y = Double.parseDouble(req.getParameter("y"));
-            double r = Double.parseDouble(req.getParameter("r"));
+            if(req.getParameter("isFromGraphic").equals("0")) { //NOT GRAPHIC
+                double x = Double.parseDouble(req.getParameter("x"));
+                double y = Double.parseDouble(req.getParameter("y"));
+                double r = Double.parseDouble(req.getParameter("r"));
 
-            if (y <= -3 || y >= 5) {
-                createErrorPage(resp);
+                if (y <= -3 || y >= 5) {
+                    createErrorPage(resp);
+                } else {
+                    getServletContext().getRequestDispatcher("/areaCheckServlet").forward(req, resp);
+                }
             }
-           else{
-               getServletContext().getRequestDispatcher("/areaCheckServlet").forward(req, resp);
-           }
+            else //GRAPHIC
+            {
+                getServletContext().getRequestDispatcher("/areaCheckServlet").forward(req, resp);
+            }
         }
         catch(Exception e){
             e.printStackTrace();

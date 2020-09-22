@@ -24,6 +24,7 @@
 
 	<div id = "menu"> 
 	    <form id = "coord" method="GET" action = "controllerServlet" onsubmit = "return valid()">
+
 		    <p> Значение Х:
 			    <div class="x">
                  <input type="hidden" name="x" value=" " id="xHiddenButton">
@@ -36,12 +37,13 @@
 			   <input type="button" name="x" value="3" class="xButton" onclick="xButtonsValidate(this)">
 			   <input type="button" name="x" value="4" class="xButton" onclick="xButtonsValidate(this)">
 			   <input type="button" name="x" value="5" class="xButton" onclick="xButtonsValidate(this)">
+                <input type="hidden" name="pointX" value="">
 			  </div>
             </p>
 			 
 			<p class = "forY"> 
 			   <label for="textfieldY">Значение Y ∈ (-3;5):</label>
-               <input type="text" id="textfieldY" autocomplete="off" name="y" maxlength = "7" placeholder = "Введите значение Y"> 
+               <input type="text" id="textfieldY" autocomplete="off" name="y" maxlength = "7" placeholder = "Введите значение Y">
             </p>
 			
 			<p> Значение R:
@@ -75,6 +77,7 @@
               </tr>
                 <jsp:include page="incl/table.jsp" />
 		     </table>
+
 
 	    </div>		
 	</div>

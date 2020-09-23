@@ -20,6 +20,8 @@
 
      <div>
          <%@ include file="incl/graphic.html" %>
+         <circle id="point" r="3" cx="200" cy="200" fill="#641AD5" stroke="#641AD5" visibility="hidden"/>
+         </svg>
      </div>
 
 	<div id = "menu"> 
@@ -44,6 +46,7 @@
 			<p class = "forY"> 
 			   <label for="textfieldY">Значение Y ∈ (-3;5):</label>
                <input type="text" id="textfieldY" autocomplete="off" name="y" maxlength = "7" placeholder = "Введите значение Y">
+                <input type="hidden" name="pointY" value="">
             </p>
 			
 			<p> Значение R:

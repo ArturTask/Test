@@ -27,10 +27,17 @@
 
     <div>
         <%@ include file="incl/graphic.html" %>
+        <% Dot dot = (Dot) session.getAttribute("currentDot");
+            double x = Integer.parseInt(dot.getX())*90/Integer.parseInt(dot.getR())+125;
+            double y = 125 - Double.parseDouble(dot.getY()) * 90 / Integer.parseInt(dot.getR());
+        %>
+        <circle id="point" r="3" cx="<%=x%>" cy="<%=y%>" fill="#641AD5" stroke="#641AD5"/>
+        </swg>
     </div>
-<div>
-    <a href="index.jsp">Страница с формой</a>
-</div>
+
+    <div>
+        <a href="index.jsp">Страница с формой</a>
+    </div>
     <%Dot currentDot = (Dot)session.getAttribute("currentDot"); %>
     <div class="currentTable">
         Текущие значения:
@@ -44,7 +51,7 @@
             <th>Y</th> <td>${currentDot.getY()}</td>
         </tr>
         <tr>
-            <th>R</th> <td>${currentDot.getR()}</td>
+            <th>R</th> <td id="currentR">${currentDot.getR()}</td>
         </tr>
         <tr>
             <th>Результат:</th> <td>${currentDot.getResult()}</td>

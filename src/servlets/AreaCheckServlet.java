@@ -35,7 +35,7 @@ public class AreaCheckServlet extends HttpServlet {
         else //GRAPHIC
         {
             x = req.getParameter("pointX");
-            y = req.getParameter("y");
+            y = req.getParameter("pointY");
             r = req.getParameter("r");
             result = checkResult(Integer.parseInt(x), Double.parseDouble(y), Integer.parseInt(r));
         }

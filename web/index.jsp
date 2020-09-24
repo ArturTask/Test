@@ -1,3 +1,5 @@
+<%@ page import="models.Dot" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=utf-8" %>
 
 <html>
@@ -22,6 +24,7 @@
          <%@ include file="incl/graphic.html" %>
          <circle id="point" r="3" cx="200" cy="200" fill="#641AD5" stroke="#641AD5" visibility="hidden"/>
          </svg>
+
      </div>
 
 	<div id = "menu"> 

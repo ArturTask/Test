@@ -1,4 +1,5 @@
 <%@ page import="models.Dot" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=utf-8" %>
 
 <html>
@@ -32,6 +33,10 @@
             double y = 125 - Double.parseDouble(dot.getY()) * 90 / Integer.parseInt(dot.getR());
         %>
         <circle id="point" r="3" cx="<%=x%>" cy="<%=y%>" fill="#641AD5" stroke="#641AD5"/>
+<%--        <% ArrayList<Dot> history = (ArrayList<Dot>)session.getAttribute("history");%>--%>
+<%--        <c:forEach var="dot" items="${history}">--%>
+<%--            <circle id="point" r="3" cx="<%=Integer.parseInt(dot.getX())*90/Integer.parseInt(dot.getR())+125%>" cy="<%=125 - Double.parseDouble(dot.getY()) * 90 / Integer.parseInt(dot.getR())%>" fill="#641AD5" stroke="#641AD5"/>--%>
+<%--        </c:forEach>--%>
         </swg>
     </div>
 

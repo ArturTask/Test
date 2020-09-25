@@ -13,13 +13,30 @@ public class ControllerServlet extends HttpServlet {
         try {
 
             if(req.getParameter("isFromGraphic").equals("0")) { //NOT GRAPHIC
-                double x = Double.parseDouble(req.getParameter("x"));
+                int x = Integer.parseInt(req.getParameter("x"));
                 double y = Double.parseDouble(req.getParameter("y"));
-                double r = Double.parseDouble(req.getParameter("r"));
+                int r = Integer.parseInt(req.getParameter("r"));
+                boolean validX=false;
+                boolean validR=false;
 
-                if (y <= -3 || y >= 5) {
-                    createErrorPage(resp);
-                } else {
+
+                for(int i = -3; i<6 ;i++)
+                {
+                    if(x==i){
+                        validX=true;
+                    }
+                }
+                for(int i = 1; i<6; i++)
+                {
+                    if(r==i){
+                        validR=true;
+                    }
+                }
+                if (y <= -3 || y >= 5 || !validR || !validX) {
+                    getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+                }
+
+                else {
                     getServletContext().getRequestDispatcher("/areaCheckServlet").forward(req, resp);
                 }
             }
@@ -27,6 +44,10 @@ public class ControllerServlet extends HttpServlet {
             {
                 getServletContext().getRequestDispatcher("/areaCheckServlet").forward(req, resp);
             }
+        }
+        catch (NumberFormatException|NullPointerException e)
+        {
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
         }
         catch(Exception e){
             e.printStackTrace();

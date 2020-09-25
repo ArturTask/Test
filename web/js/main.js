@@ -8,7 +8,7 @@ function rButtonsValidate(input) {
 	let hiddenInput = document.getElementById("rHiddenButton");
 
 	hiddenInput.value = input.value;
-	console.log(hiddenInput.value);
+	// console.log(hiddenInput.value);
 
 	for (let i = 0; i < buttons.length; i++)
 	{
@@ -35,7 +35,7 @@ function xButtonsValidate(input) {
 	let hiddenInput = document.getElementById("xHiddenButton");
 
 	hiddenInput.value = input.value;
-	console.log(hiddenInput.value);
+	// console.log(hiddenInput.value);
 
 	for (let i = 0; i < buttons.length; i++)
 	{
@@ -57,6 +57,11 @@ function xButtonsValidate(input) {
 
    function valid() {
         let y = parseFloat($('#textfieldY').val().replace(",", "."));
+        var validX=false;
+        var validR=false;
+	   // let numX = parseInt(x);
+	   // let numR = parseInt(r);
+
 		$('#error').text("");
       
        if (isNaN(y) || y <= -3 || y >= 5) {
@@ -72,10 +77,37 @@ function xButtonsValidate(input) {
             $('#error').text("Укажите значение X");
             return false;
         }
+		else {
+			for(let i=-3; i<6; i++)
+			{
+				if(x==i){
+					validX=true;
+				}
+			}
+			if(!validX)
+			{
+				$('#error').text("Значение X должно быть целым в отрезке: [-3;5]");
+				return false;
+			}
+		}
 		
 		if(isNaN(r)){
 			$('#error').text("Укажите значение R");
             return false;
+		}
+		else {
+			for(let i=1; i<6; i++)
+			{
+				if(r==i){
+					validR=true;
+				}
+			}
+			if(!validR)
+			{
+				$('#error').text("Значение R должно быть целым в отрезке: [1;5]");
+				return false;
+			}
+
 		}
 		
       return true;
